@@ -1,0 +1,33 @@
+// initialize INITIAL_STATE with "state" object; should be empty
+const INITIAL_STATE = {
+    memes: []
+}
+
+// initialize rootReducer with "state" & "action" as params
+const rootReducer = (state=INITIAL_STATE, action) => {
+    // switch statement 
+    switch(action.type) {
+        // case #1 (CREATE) 
+        case 'CREATE':
+            // returns an object with existing "state" and "action"
+            return {
+                ...state,
+                memes: [
+                    ...state.meme, 
+                ]
+            }
+
+        // case #2 (DELETE)
+        // case 'DELETE': 
+        //     return {
+        //         ...state, 
+        //         memes: state.memes.filter(meme => meme.id !== id)
+        //     }
+
+        // case default 
+        default:
+            return state 
+    }
+}
+
+export default rootReducer 
