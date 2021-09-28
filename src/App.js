@@ -14,6 +14,11 @@ function App() {
   const addMeme = (newMeme) => {
     dispatch({type: 'CREATE', meme: newMeme })
   }
+
+  // deleteMeme() 
+  const deleteMeme = (id) => {
+    dispatch({type: 'DELETE', id})
+  }
   
   const memeList = memes.map(meme => (
     <Meme
@@ -21,6 +26,8 @@ function App() {
       url={meme.url}
       topText={meme.topText}
       bottomText={meme.bottomText}
+      // pass deleteMeme
+      deleteMeme={() => deleteMeme(meme.id)}
     />
   ));
 
