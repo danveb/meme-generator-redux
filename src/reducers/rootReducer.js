@@ -1,19 +1,6 @@
 // initialize INITIAL_STATE with "state" object; should be empty
 const INITIAL_STATE = {
-    /* state will have an id, top, bottom (texts) 
-
-    memes: [
-        {
-            id: 1, 
-            top: '', 
-            bottom: ''
-        }
-    ]
-
-    */ 
-
     memes: []
-    
 }
 
 // initialize rootReducer with "state" & "action" as params
