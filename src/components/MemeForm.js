@@ -1,4 +1,5 @@
 import React, { useState } from 'react' 
+import { v4 as uuid } from 'uuid'
 
 const MemeForm = ({ addMeme }) => {
 
@@ -24,7 +25,8 @@ const MemeForm = ({ addMeme }) => {
     // handleSubmit() 
     const handleSubmit = (e) => {
         e.preventDefault() 
-        addMeme({ ...formData })
+        // to generate a unique ID 
+        addMeme({ ...formData, id: uuid() })
         setFormData(INITIAL_STATE) 
 
     }
