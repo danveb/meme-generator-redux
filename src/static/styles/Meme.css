@@ -1,0 +1,46 @@
+.Meme-container {
+	position: relative;
+}
+
+.Meme-container img {
+	width: 300px;
+	height: 300px;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.Meme-container span {
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	color: white;
+	font-size: 2em;
+}
+
+.Meme-topText {
+	top: 40px;
+}
+
+.Meme-bottomText {
+	bottom: 50px;
+}
+
+.Meme-deleteBtn {
+	position: absolute;
+	top: 150px;
+	border: 0px;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 1em;
+	margin: 0 auto;
+}
+
+.Meme-deleteBtn:hover {
+	cursor: pointer;
+}
