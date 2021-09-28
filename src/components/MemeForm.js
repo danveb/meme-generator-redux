@@ -26,6 +26,7 @@ const MemeForm = ({ addMeme }) => {
         e.preventDefault() 
         addMeme({ ...formData })
         setFormData(INITIAL_STATE) 
+
     }
 
     return (
@@ -40,6 +41,7 @@ const MemeForm = ({ addMeme }) => {
                         name="url"
                         value={formData.url}
                         onChange={handleChange}
+                        required 
                     />
                 </div>
                 <div>
