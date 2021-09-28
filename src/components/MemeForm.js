@@ -1,6 +1,6 @@
 import React, { useState } from 'react' 
 
-const MemeForm = () => {
+const MemeForm = ({ addMeme }) => {
 
     // initialize INITIAL_STATE object
     const INITIAL_STATE = {
@@ -12,12 +12,26 @@ const MemeForm = () => {
     // initialize useState
     const [formData, setFormData] = useState(INITIAL_STATE) 
 
+    // handleChange() 
+    const handleChange = (e) => {
+        const { name, value } = e.target 
+        setFormData(form => ({ 
+            ...form, 
+            [name]: value }
+        ))
+    }
 
+    // handleSubmit() 
+    const handleSubmit = (e) => {
+        e.preventDefault() 
+        addMeme({ ...formData })
+        setFormData(INITIAL_STATE) 
+    }
 
     return (
         <div>
             <h1>Meme Form</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="url">Image URL</label>
                     <input
@@ -25,7 +39,7 @@ const MemeForm = () => {
                         type="text"
                         name="url"
                         value={formData.url}
-                        // onChange={}
+                        onChange={handleChange}
                     />
                 </div>
                 <div>
@@ -35,7 +49,7 @@ const MemeForm = () => {
                         type="text"
                         name="topText"
                         value={formData.topText}
-                        // onChange={}
+                        onChange={handleChange}
                     />
                 </div>
                 <div>
@@ -45,7 +59,7 @@ const MemeForm = () => {
                         type="text"
                         name="bottomText"
                         value={formData.bottomText}
-                        // onChange={}
+                        onChange={handleChange}
                     />
                 </div> 
                     <button>Generate Meme</button>
